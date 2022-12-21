@@ -1,0 +1,32 @@
+//  Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B
+Console.WriteLine("Введите число А:");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine( "Введите число B:");
+int b = Convert.ToInt32(Console.ReadLine());
+int result = 1;
+for (int i=0; i<b; i++)
+{
+    result = result*a;
+} 
+Console.WriteLine($"Результат возведения числа {a} в степень {b} равен {result}");
+
+// Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+
+Console.WriteLine("Введите число:");
+int a = Convert.ToInt32(Console.ReadLine());
+int sum = 0;
+while (a > 0)
+{
+    sum = sum + a % 10;
+    a /= 10 ;
+}
+Console.WriteLine(sum);
+
+// Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+Random rnd = new Random();
+int[] myArray = new int[8];
+for (int i = 0; i < myArray.Length; i++)
+{
+    myArray[i] = rnd.Next(-50,50);
+    Console.WriteLine(myArray[i]) ;
+}
