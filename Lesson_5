@@ -1,0 +1,51 @@
+// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами.
+// Напишите программу, которая покажет количество чётных чисел в массиве.
+Console.WriteLine("Введите размер массива:");
+int size_array = Convert.ToInt32(Console.ReadLine());
+int[] numbers = new int[size_array];
+int count = 0;
+for (int i = 0; i < size_array; i++)
+{
+    numbers[i] = new Random().Next(100, 1000);
+    if (numbers[i] % 2 == 0)
+        count++;
+}
+Console.WriteLine(string.Join(", ", numbers));
+Console.WriteLine($"В заданном массиве {numbers.Length} элементов, из них {count} четных");
+
+// Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+Console.WriteLine("Введите размер массива:");
+int size_array = Convert.ToInt32(Console.ReadLine());
+int[] numbers = new int[size_array];
+int sum = 0;
+for (int i = 0; i < numbers.Length; i++)
+{
+    numbers[i] = new Random().Next(1, 1000);
+    if (i % 2 > 0)
+        sum+=numbers[i];
+}
+Console.WriteLine(string.Join(", ", numbers));
+Console.WriteLine($"Сумма элементов, стоящих на нечётных позициях равна:{sum} ");
+
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+Console.WriteLine("Введите размер массива:");
+int size_array = Convert.ToInt32(Console.ReadLine());
+double[] numbers = new double[size_array];
+for (int i = 0; i < numbers.Length; i++)
+{
+    numbers[i] = new Random().Next(0, 1000);
+}
+double min = numbers[0];
+double max = numbers[0];
+
+for (int n = 0; n < numbers.Length; n++)
+    if (numbers[n] < min)
+        min = numbers[n];
+    else if (numbers[n] > max)
+        max = numbers[n];
+double diff = max - min;        
+
+
+Console.WriteLine(string.Join(", ", numbers));
+Console.WriteLine($"Разница между максимальным и минимальным элементом массива составляет:{diff} ");
