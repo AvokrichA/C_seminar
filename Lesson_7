@@ -24,7 +24,7 @@ void FillArray(double[,] matrix)
 }
 Console.Write("Задайте количество строк массива: ");
 int rows = Convert.ToInt32(Console.ReadLine());
-Console.Write("Задайте количество сттолбцов массива: ");
+Console.Write("Задайте количество столбцов массива: ");
 int columns = Convert.ToInt32(Console.ReadLine());
 double[,] matr = new double [rows, columns];
 
