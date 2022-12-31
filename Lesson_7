@@ -32,4 +32,34 @@ FillArray(matr);
 Console.WriteLine();
 PrintArray(matr);
 
+//Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
 
+Console.Write("Введите количество строк массива: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите количетсво столбцов массива: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите номер строки : ");
+int row = Convert.ToInt32(Console.ReadLine()) - 1;
+Console.Write("Введите номер столбца: ");
+int column = Convert.ToInt32(Console.ReadLine()) - 1;
+Random random = new Random();
+int[,] arr = new int[rows, columns];
+Console.WriteLine("Исходный массив");
+for (int i = 0; i < arr.GetLength(0); i++)
+{
+    for (int j = 0; j < arr.GetLength(1); j++)
+    {
+    arr[i, j] = random.Next(10, 99);
+Console.Write("{0} ", arr[i, j]);    
+    }
+Console.WriteLine();
+}
+        if (row < 0 | row > arr.GetLength(0) - 1 | column < 0 | column > arr.GetLength(1) - 1)
+{
+Console.WriteLine("Элемент не существует ");
+}
+    else
+{
+    Console.WriteLine("Значение элемента массива = {0}", arr[row, column]);
+}
+Console.ReadLine();
