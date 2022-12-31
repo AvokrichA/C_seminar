@@ -1,0 +1,35 @@
+// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+
+void PrintArray(double[,] matrix)
+{
+    for (int rows = 0; rows < matrix.GetLength(0); rows++)
+    {
+        for (int columns = 0; columns < matrix.GetLength(1); columns++)
+    {
+            Console.Write($"{matrix[rows, columns]} ");
+    }
+        Console.WriteLine();
+    }
+}
+
+void FillArray(double[,] matrix)
+{
+    for (int rows = 0; rows < matrix.GetLength(0); rows++)
+{
+        for (int columns = 0; columns < matrix.GetLength(1); columns++)
+        {
+            matrix[rows, columns] = new Random().Next(-10000, 10000) /100.0;
+        }
+}
+}
+Console.Write("Задайте количество строк массива: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Задайте количество сттолбцов массива: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+double[,] matr = new double [rows, columns];
+
+FillArray(matr);
+Console.WriteLine();
+PrintArray(matr);
+
+
