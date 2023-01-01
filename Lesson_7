@@ -32,7 +32,7 @@ FillArray(matr);
 Console.WriteLine();
 PrintArray(matr);
 
-//Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+//Задача 50.Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
 
 Console.Write("Введите количество строк массива: ");
 int rows = Convert.ToInt32(Console.ReadLine());
@@ -63,3 +63,28 @@ Console.WriteLine("Элемент не существует ");
     Console.WriteLine("Значение элемента массива = {0}", arr[row, column]);
 }
 Console.ReadLine();
+
+//Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+Random random = new Random();
+Console.WriteLine("Исходный массив:");
+int[,] matrix = new int[random.Next(1, 10), random.Next(1, 10)];
+for (int rows = 0; rows < matrix.GetLength(0); rows++)
+{
+    for (int columns = 0; columns < matrix.GetLength(1); columns++)
+    {
+        matrix[rows, columns] = random.Next(1, 10);
+        Console.Write(matrix[rows, columns] + " ");
+    }
+    
+    Console.WriteLine();
+}
+Console.WriteLine("Среднее арифметическое по столбцам:");
+for (int columns = 0; columns < matrix.GetLength(1); columns++)
+{
+    double sum = 0;
+    for (int rows = 0; rows < matrix.GetLength(0); rows++)
+    {
+        sum += matrix[rows, columns];
+    }
+        Console.Write($"{sum / matrix.GetLength(0)} " );
+}
